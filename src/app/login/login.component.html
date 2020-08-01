@@ -1,8 +1,9 @@
 <div class="page_container">
   <div class="form_wrapper">
-    <h2>{{user.name}}</h2>
-    <h4>{{user.email}}</h4>
-    <div>{{user | json}}</div>
+    <div *ngI="user">
+      <h2>{{user.name}}</h2>
+      <h4>{{user.email}}</h4>
+    </div>
     <div class="title">Login</div>
     <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
       <div class="error centered" [hidden]="!submitted">Name or password wrong</div>
