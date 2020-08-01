@@ -11,23 +11,28 @@ export class LoginComponent implements OnInit {
 
   userName = '';
   password = '';
-  submitted = false;
+  submitFailed = false;
 
   constructor(private authService: SocialAuthService,
               private router: Router) { }
 
   ngOnInit(): void {
-
+    this.authService.authState.subscribe( user => {
+      if (user != null){
+        this.router.navigate(['/user']);
+      }else{
+        this.submitFailed = true;
+      }
+    });
   }
 
   onSubmit(){
     console.log(this.userName + '' + this.password);
-    this.submitted = true;
+    this.submitFailed = true;
   }
 
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-    this.router.navigate(['/user']);
   }
 
 }

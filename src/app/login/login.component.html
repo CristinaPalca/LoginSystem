@@ -1,9 +1,8 @@
 <div class="page_container">
   <div class="form_wrapper">
-
     <div class="title">Login</div>
     <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
-      <div class="error centered" [hidden]="!submitted">Name or password wrong</div>
+      <div class="error centered" [hidden]="!submitFailed">Name or password wrong</div>
       <div class="input_group">
         <input type="email" name="name" [(ngModel)]="userName" #username="ngModel"
                [class.invalid_input]="username.invalid && username.touched"

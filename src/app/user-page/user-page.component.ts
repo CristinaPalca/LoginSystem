@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SocialUser, SocialAuthService } from 'angularx-social-login';
+import { SocialUser, SocialAuthService, GoogleLoginProvider } from 'angularx-social-login';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-page',
@@ -8,23 +9,24 @@ import { SocialUser, SocialAuthService } from 'angularx-social-login';
 })
 export class UserPageComponent implements OnInit {
 
-  username: string = 'random';
+  username: string = '';
 
-  user: SocialUser;
-  loggedIn: boolean = true;
+  loggedIn: boolean = false;
 
-  constructor(private authService: SocialAuthService) { }
+  constructor(private authService: SocialAuthService,
+              private route: Router) { }
 
   ngOnInit(): void {
     this.authService.authState.subscribe( user => {
-      this.user = user;
+      this.username = user.name;
       this.loggedIn = (user != null);
-      console.log(this.user);
     });
+
   }
   signOut(): void {
     console.log('logged out');
     this.authService.signOut();
+    this.route.navigate(['/login']);
   }
 
 
