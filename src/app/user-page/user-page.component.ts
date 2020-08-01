@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class UserPageComponent implements OnInit {
 
   username: string = '';
-
+  user: SocialUser;
   loggedIn: boolean = false;
 
   constructor(private authService: SocialAuthService,
@@ -18,8 +18,14 @@ export class UserPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.authState.subscribe( user => {
-      this.username = user.name;
-      this.loggedIn = (user != null);
+      if (user != null){
+        this.user = user;
+        this.username = user.name;
+        this.loggedIn = (user != null);
+      }
+    }, err => {
+      console.log('from user page');
+      console.log(err);
     });
 
   }

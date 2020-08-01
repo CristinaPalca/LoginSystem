@@ -21,14 +21,14 @@ export class LoginComponent implements OnInit {
       if (user != null){
         this.router.navigate(['/user']);
       }else{
-        this.submitFailed = true;
+       // this.submitFailed = true;
       }
-    });
+    }, err => { console.log(err)});
   }
 
   onSubmit(){
     console.log(this.userName + '' + this.password);
-    this.submitFailed = true;
+   // this.submitFailed = true;
   }
 
   signInWithGoogle(): void {
