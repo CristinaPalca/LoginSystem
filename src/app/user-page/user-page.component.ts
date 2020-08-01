@@ -24,17 +24,18 @@ export class UserPageComponent implements OnInit {
         this.loggedIn = true;
       }else{
         this.loggedIn = false;
+        this.route.navigate(['/login']);
       }
     }, err => {
       console.log('from user page');
       console.log(err);
       this.loggedIn = false;
+      this.route.navigate(['/login']);
     });
 
   }
   signOut(): void {
     console.log('logged out');
-    this.route.navigate(['/login']);
     this.authService.signOut();
   }
 
