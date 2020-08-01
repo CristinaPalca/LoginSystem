@@ -32,7 +32,13 @@ export class LoginComponent implements OnInit {
   }
 
   signInWithGoogle(): void {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    try{
+      this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    }catch(err){
+      console.log('error from sign in google');
+      console.log(err);
+    }
+
   }
 
 }
