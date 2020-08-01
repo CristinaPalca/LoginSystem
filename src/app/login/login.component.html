@@ -1,5 +1,8 @@
 <div class="page_container">
   <div class="form_wrapper">
+    <h2>{{user.name}}</h2>
+    <h4>{{user.email}}</h4>
+    <div>{{user | json}}</div>
     <div class="title">Login</div>
     <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
       <div class="error centered" [hidden]="!submitted">Name or password wrong</div>
@@ -24,7 +27,10 @@
     <div class="social_links_container">
       <div class="or_wrapper"><hr/><div>or</div><hr/></div>
       <div class="social_links">
-        <img src="./assets/images/icons_google.svg" width="30" alt="google">
+        <button (click)="signInWithGoogle()">
+          <img src="./assets/images/icons_google.svg" width="30" alt="google">
+        </button>
+
         <img src="./assets/images/logos_facebook.svg" width="30" alt="facebook">
       </div>
     </div>
