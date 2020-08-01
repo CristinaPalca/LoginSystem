@@ -25,8 +25,8 @@ export class UserPageComponent implements OnInit {
   }
   signOut(): void {
     console.log('logged out');
-    this.authService.signOut();
     this.route.navigate(['/login']);
+    this.authService.signOut();
   }
 
 
