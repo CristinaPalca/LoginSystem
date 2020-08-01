@@ -21,11 +21,14 @@ export class UserPageComponent implements OnInit {
       if (user != null){
         this.user = user;
         this.username = user.name;
-        this.loggedIn = (user != null);
+        this.loggedIn = true;
+      }else{
+        this.loggedIn = false;
       }
     }, err => {
       console.log('from user page');
       console.log(err);
+      this.loggedIn = false;
     });
 
   }
