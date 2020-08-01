@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
+import { GoogleLoginProvider, SocialAuthService, SocialUser, FacebookLoginProvider } from 'angularx-social-login';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.authService.authState.subscribe( user => {
       if (user != null){
+        console.log(user);
         this.router.navigate(['/user']);
       }else{
        // this.submitFailed = true;
@@ -41,6 +42,9 @@ export class LoginComponent implements OnInit {
       console.log(err);
     }
 
+  }
+  signInWithFB(): void {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 
 }

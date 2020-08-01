@@ -45,6 +45,10 @@ import { UserPageComponent } from './user-page/user-page.component';
             provider: new GoogleLoginProvider(
               '102320286668-nqn3u7qaad9gtjbqc8tpg0l102tnob39.apps.googleusercontent.com'
             ),
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('738393710294355'),
           }
         ]
       } as SocialAuthServiceConfig
