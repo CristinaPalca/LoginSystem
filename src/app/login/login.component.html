@@ -1,9 +1,6 @@
 <div class="page_container">
   <div class="form_wrapper">
-    <div *ngIf="loggedIn">
-      <h2>{{user.name}}</h2>
-      <h4>{{user.email}}</h4>
-    </div>
+
     <div class="title">Login</div>
     <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
       <div class="error centered" [hidden]="!submitted">Name or password wrong</div>
@@ -31,8 +28,9 @@
         <button (click)="signInWithGoogle()">
           <img src="./assets/images/icons_google.svg" width="30" alt="google">
         </button>
-
-        <img src="./assets/images/logos_facebook.svg" width="30" alt="facebook">
+        <button>
+          <img src="./assets/images/logos_facebook.svg" width="30" alt="facebook">
+        </button>
       </div>
     </div>
   </div>

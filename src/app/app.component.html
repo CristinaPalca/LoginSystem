@@ -1,6 +1,6 @@
 <div class="top_container">
   <router-outlet></router-outlet>
-  <div class="right_col">
+  <div class="right_col" *ngIf="!loggedIn">
     <div class="right_title">Welcome to OmniPass</div>
     <div>Login to start your journey</div>
     <div class="waves">

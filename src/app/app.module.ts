@@ -16,6 +16,7 @@ import {
   FacebookLoginProvider,
   AmazonLoginProvider,
 } from 'angularx-social-login';
+import { UserPageComponent } from './user-page/user-page.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {
     LoginComponent,
     RegisterComponent,
     NotFoundComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    UserPageComponent
   ],
   imports: [
     BrowserModule,

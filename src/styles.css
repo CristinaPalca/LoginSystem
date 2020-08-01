@@ -26,6 +26,26 @@ body, html{
   width: 100vw;
   position: relative;
 }
+.user_container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-color: #fff;
+}
+.logOut_btn{
+  font-size: 18px;
+  border-radius: 30px;
+  border: none;
+  padding: 10px 25px;
+  background-color: #50ABBF;
+  color: #fff;
+  margin: 20px auto;
+}
 
 .form_wrapper{
   flex: 1 100%;
@@ -120,9 +140,12 @@ form .centered{
   align-items: center;
   margin: 20px 0;
 }
-.social_links img{
-  margin: 0 15px;
+.social_links button{
+  margin: 0 5px;
+  border: none;
+  background: none;
 }
+
 
 .redirect{
   padding: 30px 0;
@@ -146,6 +169,7 @@ form .centered{
   position: relative;
   display: none;
 }
+
 @media (min-width: 768px){
   .top_container{
     display: flex;
