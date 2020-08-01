@@ -23,7 +23,9 @@ export class LoginComponent implements OnInit {
       }else{
        // this.submitFailed = true;
       }
-    }, err => { console.log(err)});
+    }, err => {
+      console.log('from login on init');
+      console.log(err)});
   }
 
   onSubmit(){
