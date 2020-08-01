@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   submitted = false;
 
   user: SocialUser;
-  loggedIn: boolean;
+  loggedIn: boolean = false;
 
   constructor(private authService: SocialAuthService) { }
 
